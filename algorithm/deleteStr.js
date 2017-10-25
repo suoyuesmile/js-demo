@@ -6,12 +6,15 @@
 var str = "They are students.";
 var del = "aeiou";
 console.log(delStr(str, del));
-function delStr(str, del) {
-    var strArr = str.split("");
-    var delArr = del.split("");
-    //console.log(strArr);
-    for (var i = 0; i < delArr.length; i++) {
-        for (var j =0; j < strArr.length; j++) {
+
+var delStr = function(str, del) {
+    var strArr, delArr, i, j;
+
+    strArr = str.split("");
+    delArr = del.split("");
+
+    for (i = 0; i < delArr.length; i++) {
+        for (j =0; j < strArr.length; j++) {
             if (delArr[i] === strArr[j]) {
                 strArr.splice(j, 1);
             }
