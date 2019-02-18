@@ -68,5 +68,3 @@ for ({ a: obj3.a } of arr6) {
 }
 
 // 8.Promise
-
-// 9.Module
