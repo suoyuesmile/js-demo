@@ -28,9 +28,11 @@ function shadowCopy(origin) {
 function isObject(origin) {
   return origin !== null && typeof origin === 'object'
 }
-function deepCopy(origin) {
+function deepCopy(origin, map = new Map()) {
   if (isObject(origin)) {
     let target = Array.isArray(origin) ? [] : {}
+    if (map.get(origin)) return map.get(origin)
+    map.set(origin, target)
     for (const key in origin) {
       target[key] = deepCopy(origin[key])
     }
