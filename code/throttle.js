@@ -19,7 +19,7 @@ function throttle(fn, wait) {
     setTimeout(() => {
       let start = +new Date()
       if (start - last > wait) {
-        fn.call(this, arguments)
+        fn.apply(this, arguments)
         last = start
       }
     }, wait)

@@ -7,10 +7,14 @@ const object = {
   f: [],
   g: function() {},
   h: NaN,
-  i: null
+  i: null,
+  j: new Date(),
+  k: new String(),
+  l: new RegExp()
 }
 
-for (let key in object) {
+// 通用方法
+for (const key in object) {
   console.log(Object.prototype.toString.call(object[key]))
 }
 
@@ -23,3 +27,21 @@ for (let key in object) {
 // [object Function]
 // [object Number]
 // [object Null]
+// [object Date]
+
+for (const key in object) {
+  console.log(typeof object[key])
+}
+
+// undefined
+// number
+// string
+// boolean
+// object
+// object
+// function
+// number
+// object
+// object
+// object
+// object
