@@ -1,6 +1,6 @@
-function A() {
+function b() {
   this.a = 3
 }
-var a = 5
-A()
+a = 5
+b()
 console.log(a)
